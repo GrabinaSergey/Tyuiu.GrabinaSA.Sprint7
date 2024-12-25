@@ -803,7 +803,7 @@ namespace Project.V1
 
         private void panelStats_GSA_Paint(object sender, PaintEventArgs e)
         {
-
+ 
         }
 
         private void buttonSortByColor_GSA_MouseEnter(object sender, EventArgs e)
