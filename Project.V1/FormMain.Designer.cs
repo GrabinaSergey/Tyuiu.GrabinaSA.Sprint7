@@ -34,8 +34,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             groupBoxToolsPanel_GSA = new GroupBox();
-            buttonGuide_GSA = new Button();
+            buttonSaveResult_GSA = new Button();
+            buttonOpenFile_GSA = new Button();
+            buttonHelp_GSA = new Button();
+            panelTools_GSA = new Panel();
             panelOutput_GSA = new Panel();
+            buttonGuide_GSA = new Button();
             groupBox1 = new GroupBox();
             buttonSearchByNumber_GSA = new Button();
             groupBoxStats_GSA = new GroupBox();
@@ -45,10 +49,6 @@
             buttonSortByPower_GSA = new Button();
             buttonSortByBrand_GSA = new Button();
             buttonSortByColor_GSA = new Button();
-            buttonSaveResult_GSA = new Button();
-            buttonOpenFile_GSA = new Button();
-            buttonHelp_GSA = new Button();
-            panelTools_GSA = new Panel();
             tabControl_GSA = new TabControl();
             tabPage1_GSA = new TabPage();
             dataGridViewInput_GSA = new DataGridView();
@@ -82,6 +82,7 @@
             toolStripMenuItem300AndMore_GSA = new ToolStripMenuItem();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             groupBoxToolsPanel_GSA.SuspendLayout();
+            panelTools_GSA.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBoxStats_GSA.SuspendLayout();
             groupBoxSortTools.SuspendLayout();
@@ -101,28 +102,74 @@
             // 
             // groupBoxToolsPanel_GSA
             // 
-            groupBoxToolsPanel_GSA.Controls.Add(buttonGuide_GSA);
-            groupBoxToolsPanel_GSA.Controls.Add(panelOutput_GSA);
-            groupBoxToolsPanel_GSA.Controls.Add(groupBox1);
-            groupBoxToolsPanel_GSA.Controls.Add(groupBoxStats_GSA);
-            groupBoxToolsPanel_GSA.Controls.Add(groupBoxSortTools);
             groupBoxToolsPanel_GSA.Controls.Add(buttonSaveResult_GSA);
             groupBoxToolsPanel_GSA.Controls.Add(buttonOpenFile_GSA);
             groupBoxToolsPanel_GSA.Controls.Add(buttonHelp_GSA);
             groupBoxToolsPanel_GSA.Controls.Add(panelTools_GSA);
-            groupBoxToolsPanel_GSA.Dock = DockStyle.Top;
             groupBoxToolsPanel_GSA.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point, 204);
             groupBoxToolsPanel_GSA.Location = new Point(0, 0);
             groupBoxToolsPanel_GSA.Name = "groupBoxToolsPanel_GSA";
-            groupBoxToolsPanel_GSA.Size = new Size(1473, 150);
+            groupBoxToolsPanel_GSA.Size = new Size(280, 859);
             groupBoxToolsPanel_GSA.TabIndex = 0;
             groupBoxToolsPanel_GSA.TabStop = false;
             groupBoxToolsPanel_GSA.Text = "Панель управления";
             // 
+            // buttonSaveResult_GSA
+            // 
+            buttonSaveResult_GSA.Image = (Image)resources.GetObject("buttonSaveResult_GSA.Image");
+            buttonSaveResult_GSA.Location = new Point(203, 51);
+            buttonSaveResult_GSA.Name = "buttonSaveResult_GSA";
+            buttonSaveResult_GSA.Size = new Size(70, 66);
+            buttonSaveResult_GSA.TabIndex = 2;
+            buttonSaveResult_GSA.UseVisualStyleBackColor = true;
+            buttonSaveResult_GSA.Click += buttonSaveResult_GSA_Click;
+            buttonSaveResult_GSA.MouseEnter += buttonSaveResult_GSA_MouseEnter;
+            // 
+            // buttonOpenFile_GSA
+            // 
+            buttonOpenFile_GSA.Image = (Image)resources.GetObject("buttonOpenFile_GSA.Image");
+            buttonOpenFile_GSA.Location = new Point(108, 51);
+            buttonOpenFile_GSA.Name = "buttonOpenFile_GSA";
+            buttonOpenFile_GSA.Size = new Size(70, 66);
+            buttonOpenFile_GSA.TabIndex = 1;
+            buttonOpenFile_GSA.UseVisualStyleBackColor = true;
+            buttonOpenFile_GSA.Click += buttonOpenFile_GSA_Click;
+            // 
+            // buttonHelp_GSA
+            // 
+            buttonHelp_GSA.Image = (Image)resources.GetObject("buttonHelp_GSA.Image");
+            buttonHelp_GSA.Location = new Point(12, 51);
+            buttonHelp_GSA.Name = "buttonHelp_GSA";
+            buttonHelp_GSA.Size = new Size(70, 66);
+            buttonHelp_GSA.TabIndex = 0;
+            buttonHelp_GSA.UseVisualStyleBackColor = true;
+            buttonHelp_GSA.Click += buttonHelp_GSA_Click;
+            buttonHelp_GSA.MouseEnter += buttonHelp_GSA_MouseEnter;
+            // 
+            // panelTools_GSA
+            // 
+            panelTools_GSA.Controls.Add(panelOutput_GSA);
+            panelTools_GSA.Controls.Add(groupBoxSortTools);
+            panelTools_GSA.Controls.Add(groupBoxStats_GSA);
+            panelTools_GSA.Controls.Add(buttonGuide_GSA);
+            panelTools_GSA.Location = new Point(0, 0);
+            panelTools_GSA.Name = "panelTools_GSA";
+            panelTools_GSA.Size = new Size(279, 1082);
+            panelTools_GSA.TabIndex = 2;
+            panelTools_GSA.Paint += panelTools_GSA_Paint;
+            // 
+            // panelOutput_GSA
+            // 
+            panelOutput_GSA.BackColor = SystemColors.GrayText;
+            panelOutput_GSA.Location = new Point(279, 0);
+            panelOutput_GSA.Name = "panelOutput_GSA";
+            panelOutput_GSA.Size = new Size(846, 965);
+            panelOutput_GSA.TabIndex = 1;
+            // 
             // buttonGuide_GSA
             // 
             buttonGuide_GSA.Image = (Image)resources.GetObject("buttonGuide_GSA.Image");
-            buttonGuide_GSA.Location = new Point(1373, 51);
+            buttonGuide_GSA.Location = new Point(80, 762);
             buttonGuide_GSA.Name = "buttonGuide_GSA";
             buttonGuide_GSA.Size = new Size(88, 90);
             buttonGuide_GSA.TabIndex = 7;
@@ -130,18 +177,10 @@
             buttonGuide_GSA.Click += buttonGuide_GSA_Click;
             buttonGuide_GSA.MouseEnter += buttonGuide_GSA_MouseEnter;
             // 
-            // panelOutput_GSA
-            // 
-            panelOutput_GSA.BackColor = SystemColors.MenuHighlight;
-            panelOutput_GSA.Location = new Point(0, 147);
-            panelOutput_GSA.Name = "panelOutput_GSA";
-            panelOutput_GSA.Size = new Size(861, 815);
-            panelOutput_GSA.TabIndex = 1;
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(buttonSearchByNumber_GSA);
-            groupBox1.Location = new Point(946, 51);
+            groupBox1.Location = new Point(63, 576);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(119, 99);
             groupBox1.TabIndex = 6;
@@ -164,7 +203,7 @@
             // 
             groupBoxStats_GSA.Controls.Add(buttonStats_GSA);
             groupBoxStats_GSA.Controls.Add(buttonCreateChart_GSA);
-            groupBoxStats_GSA.Location = new Point(718, 51);
+            groupBoxStats_GSA.Location = new Point(63, 364);
             groupBoxStats_GSA.Name = "groupBoxStats_GSA";
             groupBoxStats_GSA.Size = new Size(140, 99);
             groupBoxStats_GSA.TabIndex = 1;
@@ -199,7 +238,7 @@
             groupBoxSortTools.Controls.Add(buttonSortByBrand_GSA);
             groupBoxSortTools.Controls.Add(buttonSortByColor_GSA);
             groupBoxSortTools.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            groupBoxSortTools.Location = new Point(394, 51);
+            groupBoxSortTools.Location = new Point(34, 190);
             groupBoxSortTools.Name = "groupBoxSortTools";
             groupBoxSortTools.Size = new Size(209, 99);
             groupBoxSortTools.TabIndex = 3;
@@ -239,54 +278,14 @@
             buttonSortByColor_GSA.Click += buttonSortByColor_GSA_Click;
             buttonSortByColor_GSA.MouseEnter += buttonSortByColor_GSA_MouseEnter;
             // 
-            // buttonSaveResult_GSA
-            // 
-            buttonSaveResult_GSA.Image = (Image)resources.GetObject("buttonSaveResult_GSA.Image");
-            buttonSaveResult_GSA.Location = new Point(203, 51);
-            buttonSaveResult_GSA.Name = "buttonSaveResult_GSA";
-            buttonSaveResult_GSA.Size = new Size(70, 66);
-            buttonSaveResult_GSA.TabIndex = 2;
-            buttonSaveResult_GSA.UseVisualStyleBackColor = true;
-            buttonSaveResult_GSA.Click += buttonSaveResult_GSA_Click;
-            buttonSaveResult_GSA.MouseEnter += buttonSaveResult_GSA_MouseEnter;
-            // 
-            // buttonOpenFile_GSA
-            // 
-            buttonOpenFile_GSA.Image = (Image)resources.GetObject("buttonOpenFile_GSA.Image");
-            buttonOpenFile_GSA.Location = new Point(108, 51);
-            buttonOpenFile_GSA.Name = "buttonOpenFile_GSA";
-            buttonOpenFile_GSA.Size = new Size(70, 66);
-            buttonOpenFile_GSA.TabIndex = 1;
-            buttonOpenFile_GSA.UseVisualStyleBackColor = true;
-            buttonOpenFile_GSA.Click += buttonOpenFile_GSA_Click;
-            // 
-            // buttonHelp_GSA
-            // 
-            buttonHelp_GSA.Image = (Image)resources.GetObject("buttonHelp_GSA.Image");
-            buttonHelp_GSA.Location = new Point(12, 51);
-            buttonHelp_GSA.Name = "buttonHelp_GSA";
-            buttonHelp_GSA.Size = new Size(70, 66);
-            buttonHelp_GSA.TabIndex = 0;
-            buttonHelp_GSA.UseVisualStyleBackColor = true;
-            buttonHelp_GSA.Click += buttonHelp_GSA_Click;
-            buttonHelp_GSA.MouseEnter += buttonHelp_GSA_MouseEnter;
-            // 
-            // panelTools_GSA
-            // 
-            panelTools_GSA.Location = new Point(0, 0);
-            panelTools_GSA.Name = "panelTools_GSA";
-            panelTools_GSA.Size = new Size(1473, 150);
-            panelTools_GSA.TabIndex = 2;
-            panelTools_GSA.Paint += panelTools_GSA_Paint;
-            // 
             // tabControl_GSA
             // 
             tabControl_GSA.Controls.Add(tabPage1_GSA);
             tabControl_GSA.Controls.Add(tabPage2_GSA);
-            tabControl_GSA.Location = new Point(12, 156);
+            tabControl_GSA.Location = new Point(279, 0);
             tabControl_GSA.Name = "tabControl_GSA";
             tabControl_GSA.SelectedIndex = 0;
-            tabControl_GSA.Size = new Size(846, 706);
+            tabControl_GSA.Size = new Size(846, 859);
             tabControl_GSA.TabIndex = 0;
             // 
             // tabPage1_GSA
@@ -295,7 +294,7 @@
             tabPage1_GSA.Location = new Point(4, 34);
             tabPage1_GSA.Name = "tabPage1_GSA";
             tabPage1_GSA.Padding = new Padding(3);
-            tabPage1_GSA.Size = new Size(838, 668);
+            tabPage1_GSA.Size = new Size(838, 821);
             tabPage1_GSA.TabIndex = 0;
             tabPage1_GSA.Text = "Таблица";
             tabPage1_GSA.UseVisualStyleBackColor = true;
@@ -309,7 +308,7 @@
             dataGridViewInput_GSA.Location = new Point(3, 3);
             dataGridViewInput_GSA.Name = "dataGridViewInput_GSA";
             dataGridViewInput_GSA.RowHeadersWidth = 62;
-            dataGridViewInput_GSA.Size = new Size(832, 662);
+            dataGridViewInput_GSA.Size = new Size(832, 815);
             dataGridViewInput_GSA.TabIndex = 11;
             dataGridViewInput_GSA.CellContentClick += dataGridViewInput_GSA_CellContentClick;
             // 
@@ -319,7 +318,7 @@
             tabPage2_GSA.Location = new Point(4, 34);
             tabPage2_GSA.Name = "tabPage2_GSA";
             tabPage2_GSA.Padding = new Padding(3);
-            tabPage2_GSA.Size = new Size(838, 668);
+            tabPage2_GSA.Size = new Size(838, 821);
             tabPage2_GSA.TabIndex = 1;
             tabPage2_GSA.Text = "Вывод";
             tabPage2_GSA.UseVisualStyleBackColor = true;
@@ -334,7 +333,7 @@
             dataGridViewOutput_GSA.Location = new Point(3, 3);
             dataGridViewOutput_GSA.Name = "dataGridViewOutput_GSA";
             dataGridViewOutput_GSA.RowHeadersWidth = 62;
-            dataGridViewOutput_GSA.Size = new Size(832, 662);
+            dataGridViewOutput_GSA.Size = new Size(832, 815);
             dataGridViewOutput_GSA.TabIndex = 10;
             // 
             // panelStats_GSA
@@ -343,9 +342,9 @@
             panelStats_GSA.Controls.Add(chartStats_GSA);
             panelStats_GSA.Controls.Add(dataGridViewStats_GSA);
             panelStats_GSA.Controls.Add(splitterLeftPanel_GSA);
-            panelStats_GSA.Location = new Point(857, 147);
+            panelStats_GSA.Location = new Point(1124, 37);
             panelStats_GSA.Name = "panelStats_GSA";
-            panelStats_GSA.Size = new Size(604, 708);
+            panelStats_GSA.Size = new Size(604, 822);
             panelStats_GSA.TabIndex = 12;
             panelStats_GSA.Paint += panelStats_GSA_Paint;
             // 
@@ -379,7 +378,7 @@
             // 
             splitterLeftPanel_GSA.Location = new Point(0, 0);
             splitterLeftPanel_GSA.Name = "splitterLeftPanel_GSA";
-            splitterLeftPanel_GSA.Size = new Size(4, 708);
+            splitterLeftPanel_GSA.Size = new Size(4, 822);
             splitterLeftPanel_GSA.TabIndex = 0;
             splitterLeftPanel_GSA.TabStop = false;
             // 
@@ -508,14 +507,16 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1473, 875);
-            Controls.Add(panelStats_GSA);
+            ClientSize = new Size(1736, 860);
             Controls.Add(tabControl_GSA);
+            Controls.Add(groupBox1);
+            Controls.Add(panelStats_GSA);
             Controls.Add(groupBoxToolsPanel_GSA);
             Name = "FormMain_GSA";
             Text = "Авторемонтные мастерские";
             Load += FormMain_GSA_Load_1;
             groupBoxToolsPanel_GSA.ResumeLayout(false);
+            panelTools_GSA.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBoxStats_GSA.ResumeLayout(false);
             groupBoxSortTools.ResumeLayout(false);

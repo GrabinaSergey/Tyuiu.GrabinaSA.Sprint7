@@ -19,7 +19,8 @@ namespace Project.V1
 
         private void buttonGoSearch_GSA_Click(object sender, EventArgs e)
         {
-
+            DataBank.text = textBoxSearch_GSA.Text;
+            this.Close();
         }
 
         private void buttonGoSearch_GSA_MouseEnter(object sender, EventArgs e)
